@@ -1,0 +1,17 @@
+.body {
+  background-color: coral;
+  grid-area: content;
+  padding: 10px 20px;
+}
+.searchInput{
+  /* background-color: blue; */
+  text-align: center;
+  padding: 10px 10px;
+}
+.searchInput input{
+  width: 700px;
+  min-width: 400px;
+  height: 1.5em;
+  
+
+}

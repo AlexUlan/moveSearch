@@ -1,0 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.wrapper{
+  display: grid;
+    /* Создание колонок */
+    grid-template-columns: 6fr 1fr; 
+  grid-template-areas: 
+    "header header"
+    "content aside"
+    "footer footer";
+
+  /*отступ по горизонтали*/
+  grid-column-gap: .5em; 
+    /*отступ по вертикали*/
+    grid-row-gap: .5em; 
+    /* Задание выстоы что бы текст не вылазил за пределы  */
+    grid-auto-rows: minmax(50px, auto);
+}
+.red {
+  color:red;
+}
