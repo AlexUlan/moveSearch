@@ -1,25 +1,14 @@
-import React from "react"
-import s from "./MainBody.module.css"
+import React from "react";
+import SearchBar from "./SearchBar/SearchBar_Continer";
+import BodyContent from "./BodyContent/BodyContent_Container";
+import s from "./MainBody.module.css";
 
-const MainBody = (props) =>{
-  
-  const sumbitQuery = (e) =>{
-    e.preventDefault();
-  }
-  const changeQuerystring = (e) =>{
-   props.changeQuerySting(e.target.value)
-  }
- 
+const MainBody = props => {
   return (
-    <div className={s.body}>
-      <form onSubmit = {sumbitQuery}>
-      <div className  = {s.searchInput}>
-       <input type="text" onChange={changeQuerystring} value={props.queryString}/>
-       <button>search</button>
-       </div>
-      </form>
-      Body
+    <div>
+      <SearchBar />
+      <BodyContent />
     </div>
-  )
-}
+  );
+};
 export default MainBody;

@@ -1,15 +1,19 @@
-import React from "react"
+import React, {useEffect} from "react"
 import MainBody from "./MainBody";
 import {connect} from "react-redux"
-import {changeQuerySting} from "../../redux/reducers/queryStringReducer"
+import {changeQuerySting,getTopMovies} from "../../redux/reducers/moviesReducer"
 
 const MainBodyConatiner = props => {
+  useEffect(()=>{props.getTopMovies()},[])
   return <MainBody {...props}/>;
 };
 const MapStateTopPops = (state) =>{
   return {
-    movies:state.queryStringReducers.data,
-    queryString:state.queryStringReducers.queryString
+    movies:state.moviesReducers.data,
+    queryString:state.moviesReducers.queryString
   }
 }
-export default connect(MapStateTopPops,{changeQuerySting})(MainBodyConatiner)
+export default connect(MapStateTopPops,{
+  changeQuerySting,
+  getTopMovies})
+  (MainBodyConatiner)

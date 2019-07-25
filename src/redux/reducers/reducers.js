@@ -1,7 +1,7 @@
 import {combineReducers} from "redux"
-import queryStringReducers from "./queryStringReducer"
+import moviesReducers from "./moviesReducer"
 
 const reducers = combineReducers({
-  queryStringReducers
+  moviesReducers
 });
 export default reducers;
