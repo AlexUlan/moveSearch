@@ -4,9 +4,7 @@ import s from "./BodyContent.module.css"
 
 
 export default (props)=>{
-  console.log(props)
   const clickMovies  = (id) =>{
-    console.log(id)
   }
   return <div className={s.bodyItems}>
     {props.moviesData.map(item =>{

@@ -1,0 +1,11 @@
+.container{
+  margin: 0 auto;
+}
+.bodyContent{
+  display:flex;
+  background-color: aqua;
+  padding: 20px;
+}
+.poster{
+  padding-right: 20px;
+}

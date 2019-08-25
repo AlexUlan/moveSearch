@@ -20,7 +20,7 @@ export const moviesAPI = {
   },
   getSelectedData(type, id){
     return instance
-    .get(`/${type}/${id}/api_key=${apiKey}&language=ru-RU`)
+    .get(`/${type}/${id}?api_key=${apiKey}&language=ru-RU`)
     .then(response => response.data)
   }
 

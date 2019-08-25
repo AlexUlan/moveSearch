@@ -7,19 +7,21 @@ import {getSelectedDataMovies} from "./../../../redux/reducers/moviesReducer"
 
 const MoviesPageContiner = (props)=>{
   const {idMovies , typeMovies} = props.match.params;
-  console.log(idMovies, typeMovies)
+ // console.log(idMovies, typeMovies)
   useEffect(()=>{
     props.getSelectedDataMovies(typeMovies , idMovies );
   }
     ,[])
-  console.log(props)
+ // console.log(props)
   return(
-    <MoviePage/>
+    <MoviePage {...props.selectedMoviesData}/>
   )
 }
 
 const mapStateToProps = (state) =>{
-  return {}
+  return {
+    selectedMoviesData : state.moviesReducers.moviesSelected
+  }
 }
 
 

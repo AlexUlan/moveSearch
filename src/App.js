@@ -13,7 +13,6 @@ function App() {
       <div>
         <Route exact path="/" render={() => <MainBody />} />
         <Route path="/selectMovies/:typeMovies/:idMovies" render={() => <MoviePage />} />
-
       </div>
       {/* / <MainBody /> */}
       <RightMenu />

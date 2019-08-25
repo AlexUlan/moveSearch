@@ -6,7 +6,7 @@ const SET_SELECTED_MOVIE = "SET_SELECTED_MOVIE";
 const initialState = {
   data:[],
   queryString:"",
-  moviesSelected:{}
+  moviesSelected:{},
 }
 
 const queryReducer = (state=initialState, action) =>{
@@ -20,8 +20,9 @@ const queryReducer = (state=initialState, action) =>{
       }
     };
     case SET_SELECTED_MOVIE:{
+ 
       return {...state, 
-        moviesSelected: action.data
+      moviesSelected: {...action.data}
       }
     }
     default : return state
@@ -64,7 +65,8 @@ export const getDataQueryString = (querySting) => {
 export const getSelectedDataMovies = (type, id) => {
   return dispatch =>{
     return moviesAPI.getSelectedData(type, id)
-    .then(response => dispatch(setSelectedMovies(response.results)))
+    .then(response => {
+      return dispatch(setSelectedMovies(response))})
   }
 }
 
